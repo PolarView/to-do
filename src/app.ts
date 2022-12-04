@@ -8,6 +8,9 @@ const clearAllBtn = <HTMLButtonElement>document.querySelector('.clearAllTasksBtn
 const allCategory = <HTMLDivElement>document.querySelector('[data-all-category]');
 const inProcessCategory = <HTMLDivElement>document.querySelector('[data-inprocess-category]');
 const completedCategory = <HTMLDivElement>document.querySelector('[data-completed-category]');
+const modalContainer = <HTMLDivElement>document.querySelector('.modalContainer');
+const modalNoBtn = <HTMLButtonElement>document.querySelector('.modalNoBtn');
+const modalYesBtn = <HTMLButtonElement>document.querySelector('.modalYesBtn');
 
 type Task = {
   taskCaption: string;
@@ -209,6 +212,15 @@ completedCategory.addEventListener('click', () => {
 });
 
 clearAllBtn.addEventListener('click', () => {
+  modalContainer.classList.add('displayModal');
+});
+
+modalNoBtn.addEventListener('click', () => {
+  modalContainer.classList.remove('displayModal');
+});
+
+modalYesBtn.addEventListener('click', () => {
   tasksData = [];
   updateTodos();
+  modalContainer.classList.remove('displayModal');
 });
