@@ -1,0 +1,272 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mainContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10%;
+  margin: 0 auto;
+  height: 100%;
+
+  .createTaskWrapper {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #taskInput {
+      width: 65%;
+      padding: 30px 30px;
+      margin-right: 15px;
+      outline: none;
+      background-color: rgb(179, 205, 224);
+      border-radius: 15px;
+      font-size: 40px;
+    }
+
+    .addTaskBtn {
+      padding: 17px 28px;
+      font-size: 60px;
+      font-weight: bold;
+      background-color: rgb(129, 126, 221);
+      border-radius: 15px;
+      color: rgba(27, 39, 41, 0.887);
+    }
+
+    .addTaskBtn:hover {
+      color: rgba(156, 240, 171, 0.887);
+    }
+  }
+
+  .todosContainer {
+    width: 80%;
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .filters {
+      width: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 0px 10px 0px;
+
+      .filterCategory {
+        font-size: 40px;
+        padding: 0px 70px;
+      }
+
+      .filterCategory:hover {
+        transform: scale(1.1);
+      }
+
+      .centerCategory {
+        border-left: 2px solid rgba(95, 94, 94, 0.662);
+        border-right: 2px solid rgba(95, 94, 94, 0.662);
+      }
+    }
+
+    .topHr.generalHrStyle {
+      border: 1px solid rgba(79, 79, 79, 0.886);
+      width: 80%;
+      margin-bottom: 30px;
+    }
+
+    .searchBox {
+      position: relative;
+      margin-bottom: 50px;
+    }
+
+    .searchBox input {
+      min-width: 300px;
+      outline: none;
+      padding: 20px 30px;
+      border: none;
+      font-size: 35px;
+      margin-right: -190px;
+      color: rgb(54, 62, 80);
+    }
+
+    .inputFocusElement::after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 0;
+    }
+
+    .searchBox input:focus + .inputFocusElement::after {
+      border-bottom: 1px solid rgba(50, 55, 74, 0.896);
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 0px;
+      width: 100%;
+      transition: width 1s ease;
+    }
+
+    .tasksContainer {
+      width: 70%;
+      padding: 10px 0px;
+      display: flex;
+      flex-direction: column;
+
+      .task {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 40px;
+
+        .taskInfo {
+          padding: 11px 15px;
+          border: 1px solid black;
+          width: 70%;
+          margin-right: 30px;
+          display: flex;
+          flex-direction: column;
+          background-color: blanchedalmond;
+          border-radius: 5px;
+
+          .taskUpperRowInfo {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            font-size: 42px;
+            padding-top: 20px;
+
+            .taskTitle {
+              outline: none;
+              border: none;
+              font-size: 42px;
+              background-color: transparent;
+              color: black;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+            }
+
+            .checkboxIcon {
+              margin-right: 40px;
+              color: rgb(196, 154, 55);
+            }
+          }
+
+          .taskDataofCreation {
+            align-self: flex-end;
+          }
+        }
+
+        .taskInfoCompleted {
+          padding: 11px 15px;
+          border: 1px solid black;
+          width: 70%;
+          margin-right: 30px;
+          display: flex;
+          flex-direction: column;
+          background-color: rgba(97, 203, 93, 0.744);
+          border-radius: 5px;
+
+          .taskUpperRowInfo {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            font-size: 42px;
+            padding-top: 20px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            .taskTitle {
+              text-decoration: line-through;
+              outline: none;
+              border: none;
+              font-size: 42px;
+              background-color: transparent;
+              color: black;
+            }
+
+            .checkboxIcon {
+              margin-right: 40px;
+              color: rgb(9, 121, 24);
+            }
+          }
+
+          .taskDataofCreation {
+            align-self: flex-end;
+          }
+        }
+
+        .editBtn,
+        .deleteBtn {
+          background-color: rgb(73, 46, 123);
+          border-radius: 10px;
+        }
+
+        .editBtn:hover > i,
+        .deleteBtn:hover > i {
+          color: rgb(206, 206, 8);
+        }
+
+        .editBtn {
+          margin-right: 30px;
+        }
+
+        .editBtn > i {
+          color: rgb(139, 139, 33);
+          font-size: 30px;
+          padding: 10px 30px;
+        }
+
+        .deleteBtn > i {
+          font-size: 30px;
+          padding: 10px 30px;
+          color: rgb(86, 79, 69);
+        }
+      }
+    }
+
+    .clearAllTasksBtn {
+      padding: 10px 90px;
+      border-radius: 10px;
+      color: azure;
+      background-color: indianred;
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+
+    .clearAllTasksBtn:hover {
+      background-color: rgb(188, 54, 54);
+    }
+
+    .bottomHr.generalHrStyle {
+      border: 1px solid rgba(79, 79, 79, 0.886);
+      width: 80%;
+      margin-bottom: 30px;
+    }
+
+    .shareTaskCaption {
+      font-size: 40px;
+      font-weight: 600;
+      color: rgb(10, 177, 183);
+    }
+
+    .shareTaskButtonsContainer {
+      display: flex;
+      width: 35%;
+      margin-top: 30px;
+      justify-content: space-around;
+      font-size: 40px;
+      color: rgb(167, 64, 117);
+    }
+  }
+}

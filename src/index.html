@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.scss" />
+    <title>Document</title>
+    <script type="module" src="app.ts" defer></script>
+    <script src="https://kit.fontawesome.com/1504d732ab.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div class="createTaskWrapper">
+        <input type="text" placeholder="write your task..." id="taskInput" />
+        <div class="addTaskBtn">
+          <i class="fa-solid fa-plus"></i>
+        </div>
+      </div>
+
+      <div class="todosContainer">
+        <div class="filters">
+          <div class="filterCategory" data-all-category>All</div>
+          <div class="filterCategory centerCategory" data-inprocess-category>In Process</div>
+          <div class="filterCategory" data-completed-category>Completed</div>
+        </div>
+        <hr class="topHr generalHrStyle" />
+        <div class="searchBox">
+          <input type="text" placeholder="Search..." class="searchTask" />
+          <span class="inputFocusElement"></span>
+        </div>
+        <ul class="tasksContainer"></ul>
+        <button class="clearAllTasksBtn">Clear All</button>
+        <hr class="bottomHr generalHrStyle" />
+        <div class="shareTaskCaption">
+          Share your dreams with friends and achive them together !
+        </div>
+        <div class="shareTaskButtonsContainer">
+          <div class="shareTaskBtn">
+            <i class="fa-brands fa-twitter"></i>
+          </div>
+          <div class="shareTaskBtn">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+          <div class="shareTaskBtn">
+            <i class="fa-brands fa-facebook"></i>
+          </div>
+          <div class="shareTaskBtn">
+            <i class="fa-brands fa-telegram"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
